@@ -1,0 +1,9 @@
+# Build the frontend with `cd frontend && npm ci && npm run build`, then use
+# `docker build -f Dockerfile.bymav frontend/dist` as the build context.
+# Pin the upstream server release while replacing only its frontend assets.
+FROM infisical/infisical:v0.165.15
+
+USER root
+RUN rm -rf /backend/frontend-build && mkdir /backend/frontend-build
+COPY --chown=1001:1001 . /backend/frontend-build/
+USER 1001

@@ -228,6 +228,7 @@ import { type CopySecretsInvocation, CopySecretsSheet } from "./components/CopyS
 import { CreateDynamicSecretForm } from "./components/CreateDynamicSecretForm";
 import { CreateSecretForm } from "./components/CreateSecretForm";
 import { EditDynamicSecretForm } from "./components/EditDynamicSecretForm";
+import { ExpiryInventoryDialog } from "./components/ExpiryInventoryDialog";
 import { InviteMembersModal } from "./components/InviteMembersModal/InviteMembersModal";
 import { ImportSecretsSheet } from "./components/SecretDropzone";
 import { SecretV2MigrationSection } from "./components/SecretV2MigrationSection";
@@ -2711,6 +2712,7 @@ const OverviewPageContent = () => {
                       environments={visibleEnvs}
                       projectId={projectId}
                     />
+                    <ExpiryInventoryDialog projectId={projectId} environments={userAvailableEnvs} />
                   </div>
                 )}
               </div>
